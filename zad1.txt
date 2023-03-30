@@ -1,0 +1,1 @@
+Aplikacja wydrukowała komunikat 'new connection' w konsoli dzięki zdarzeniu (event) 'connection'. Zdarzenie to jest emitowane przez obiekt serwera za każdym razem, gdy nawiązane zostanie połączenie między klientem a serwerem.
