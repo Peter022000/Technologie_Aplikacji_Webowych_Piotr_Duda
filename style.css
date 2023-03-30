@@ -1,0 +1,95 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    background-image: url("./bg.jpg");
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background2 {
+    background-color: darkolivegreen;
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text {
+    height: 50vh;
+    background-color: #a1ffff54;
+    font-size: 36px;
+    padding: 15px;
+    border: 1px solid #333333;
+    overflow-y: scroll;
+}
+
+nav {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 10px 5px 5px black;
+    z-index: 900;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0d0fbf;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+footer {
+    text-align: center;
+}
+
+.other {
+    display: flex;
+    justify-content: center;
+    background-color: #f55b5b;
+    padding: 15px;
+}
+
+.kontakt {
+    padding: 15px;
+}
+.logo-wrapper {
+    position: relative;
+    height: 200px;
+}
+
+.logo-js {
+    background: url("./js.jpg");
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: -100px;
+}
+
+
+.logo-html {
+    background: url("./html.png");
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
