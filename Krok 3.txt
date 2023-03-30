@@ -1,0 +1,2 @@
+Reguły CSS (Cascading Style Sheets) są powiązane ze znacznikami HTML poprzez selektory CSS, które wybierają elementy HTML, do których mają być zastosowane. Selektor CSS to ciąg znaków, który opisuje, które elementy HTML mają być stylizowane za pomocą reguł CSS.
+

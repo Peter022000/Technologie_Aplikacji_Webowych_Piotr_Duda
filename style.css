@@ -1,0 +1,63 @@
+p{
+    color: white;
+}
+
+body{
+    background-color: #5353ef;
+}
+
+.picture{
+    width: 400px;
+    height: 400px;
+}
+
+div {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+#jeden {
+    background-color: red;
+}
+
+.dwa {
+    background-color: blue;
+}
+
+.trzy {
+    background-color: black;
+}
+
+.cztery {
+    background-color: green;
+}
+
+.piec {
+    background-color: yellow;
+}
+
+.szesc {
+    background-color: orange;
+}
+
+#grupa div{
+    display: inline-block;
+}
+
+.content
+{
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    background-color: dodgerblue;
+}
+
+.box
+{
+    width: 200px;
+    height: 100px;
+    padding: 40px;
+    background-color: white;
+}
+
