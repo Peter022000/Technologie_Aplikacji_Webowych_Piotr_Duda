@@ -11,6 +11,10 @@ import { BlogItemDetailsComponent } from './components/blog-item-details/blog-it
 import {HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import { SummaryPipe } from './pipes/summary.pipe';
+import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import {FormsModule} from "@angular/forms";
+import { BlogHomeComponent } from './components/blog-home/blog-home.component';
+import { FilterTextPipe } from './pipes/filter-text.pipe';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,16 @@ import { SummaryPipe } from './pipes/summary.pipe';
     BlogItemTextComponent,
     BlogItemImageComponent,
     BlogItemDetailsComponent,
-    SummaryPipe
+    SummaryPipe,
+    SearchBarComponent,
+    BlogHomeComponent,
+    FilterTextPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     DataService
