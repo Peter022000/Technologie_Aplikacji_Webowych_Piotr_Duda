@@ -16,6 +16,12 @@ import {FormsModule} from "@angular/forms";
 import { BlogHomeComponent } from './components/blog-home/blog-home.component';
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
+import { HomeComponent } from './components/home/home.component';
+import {AuthService} from "./services/auth.service";
+import {HTTP_INTERCEPTORS} from
+    '@angular/common/http';
+import {AuthInterceptor} from './services/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,9 @@ import { TextFormatDirective } from './directives/text-format.directive';
     SearchBarComponent,
     BlogHomeComponent,
     FilterTextPipe,
-    TextFormatDirective
+    TextFormatDirective,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,13 @@ import { TextFormatDirective } from './directives/text-format.directive';
     FormsModule
   ],
   providers: [
-    DataService
+    DataService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
