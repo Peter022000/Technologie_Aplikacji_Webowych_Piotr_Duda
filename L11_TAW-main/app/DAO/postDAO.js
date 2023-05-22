@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
     image: {type: String},
     text: {type: String},
 }, {
-    collection: 'lab11'
+    collection: 'post'
 });
 postSchema.plugin(uniqueValidator);
 
