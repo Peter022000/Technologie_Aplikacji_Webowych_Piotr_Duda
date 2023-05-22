@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
 
 @Component({
-  selector: 'app-add-post',
+  selector: 'add-post',
   templateUrl: './add-post.component.html',
   styleUrls: ['./add-post.component.css']
 })
