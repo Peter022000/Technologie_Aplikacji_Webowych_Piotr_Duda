@@ -1,5 +1,5 @@
 import userManager from './user.manager';
-import postManager from './post.manager';
+import musicManager from './music.manager';
 
 function getter(manager, request) {
   return function () {
@@ -9,5 +9,5 @@ function getter(manager, request) {
 
 export default {
     getUserManager: getter(userManager),
-    getPostManager: getter(postManager)
+    getMusicManager: getter(musicManager)
 };

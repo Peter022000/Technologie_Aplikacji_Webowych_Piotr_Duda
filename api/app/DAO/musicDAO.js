@@ -3,19 +3,23 @@ import uniqueValidator from 'mongoose-unique-validator';
 import mongoConverter from '../service/mongoConverter';
 import * as _ from "lodash";
 
-const postSchema = new mongoose.Schema({
+const musicSchema = new mongoose.Schema({
     title: {type: String},
     image: {type: String},
+    author: {type: String},
+    year: {type: Number},
+    length: {type: Number},
+    album: {type: String},
     text: {type: String},
 }, {
-    collection: 'post'
+    collection: 'music',
 });
-postSchema.plugin(uniqueValidator);
+musicSchema.plugin(uniqueValidator);
 
-const PostModel = mongoose.model('post', postSchema);
+const MusicModel = mongoose.model('music', musicSchema);
 
 async function query() {
-    const result = await PostModel.find({});
+    const result = await MusicModel.find({});
     {
         if (result) {
             return mongoConverter(result);
@@ -24,7 +28,7 @@ async function query() {
 }
 
 async function get(id) {
-    return PostModel.findOne({_id: id}).then(function (result) {
+    return MusicModel.findOne({_id: id}).then(function (result) {
         if (result) {
             return mongoConverter(result);
         }
@@ -34,22 +38,28 @@ async function get(id) {
 async function createNewOrUpdate(data) {
     return Promise.resolve().then(() => {
         if (!data.id) {
-            return new PostModel(data).save().then(result => {
+            return new MusicModel(data).save().then(result => {
                 if (result[0]) {
                     return mongoConverter(result[0]);
                 }
             });
         } else {
-            return PostModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), {new: true});
+            return MusicModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), {new: true});
         }
     });
 }
+
+async function remove(id) {
+    return MusicModel.deleteOne({_id: id});
+}
+
 
 export default {
     query: query,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
+    remove: remove,
 
-    model: PostModel
+    model: MusicModel
 };
 

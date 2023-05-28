@@ -1,22 +1,29 @@
-import postDAO from '../DAO/postDAO';
+import musicDAO from '../DAO/musicDAO';
 
 function create(context) {
     async function query() {
-        let result = postDAO.query();
+        let result = musicDAO.query();
         if (result) {
             return result;
         }
     }
 
     async function get(id) {
-        let result = await postDAO.get(id);
+        let result = await musicDAO.get(id);
         if (result) {
             return result;
         }
     }
 
     async function createNewOrUpdate(data) {
-        let result = await postDAO.createNewOrUpdate(data);
+        let result = await musicDAO.createNewOrUpdate(data);
+        if (result) {
+            return result;
+        }
+    }
+
+    async function remove(id) {
+        let result = await musicDAO.remove(id);
         if (result) {
             return result;
         }
@@ -26,6 +33,7 @@ function create(context) {
         query: query,
         get: get,
         createNewOrUpdate: createNewOrUpdate,
+        remove: remove
     };
 }
 

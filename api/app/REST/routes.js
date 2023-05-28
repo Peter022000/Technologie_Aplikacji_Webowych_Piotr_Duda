@@ -1,9 +1,9 @@
 import userEndpoint from './user.endpoint';
-import postEndpoint from "./post.endpoint";
+import musicEndpoint from "./music.endpoint";
 
 const routes = function (router) {
     userEndpoint(router);
-    postEndpoint (router);
+    musicEndpoint (router);
 };
 
 export default routes;
