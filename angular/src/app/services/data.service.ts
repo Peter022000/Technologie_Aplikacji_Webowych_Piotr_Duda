@@ -11,16 +11,15 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getAll() {
-    return this.http.get(this.url + '/api/posts');
+  getAll(id: any) {
+    return this.http.get(this.url + '/api/music', id);
   }
 
   getById(id: string) {
-    return this.http.get(this.url + '/api/posts/' + id);
+    return this.http.get(this.url + '/api/music/' + id);
   }
 
-  createPost(credentials: any) {
-    console.log(credentials)
-    return this.http.post(this.url + '/api/posts', credentials);
+  addMusic(credentials: any) {
+    return this.http.post(this.url + '/api/music', credentials);
   }
 }

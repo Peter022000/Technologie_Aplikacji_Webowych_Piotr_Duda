@@ -1,8 +1,8 @@
 import musicDAO from '../DAO/musicDAO';
 
 function create(context) {
-    async function query() {
-        let result = musicDAO.query();
+    async function query(id) {
+        let result = musicDAO.query(id);
         if (result) {
             return result;
         }

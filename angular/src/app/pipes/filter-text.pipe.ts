@@ -20,6 +20,3 @@ export class FilterTextPipe implements PipeTransform {
     });
   }
 }
-
-
-

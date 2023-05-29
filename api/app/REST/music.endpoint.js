@@ -1,9 +1,23 @@
 import business from '../business/business.container';
 import applicationException from "../service/applicationException";
 const musicEndpoint = (router) => {
+
+    // function requireLogin(request, response, next) {
+    //     if (request.session.loggedIn) {
+    //         next(); // allow the next route to run
+    //     } else {
+    //         // require the user to log in
+    //         request.redirect("/login"); // or render a form, etc.
+    //     }
+    // }
+    //
+    // router.all("/api/*", requireLogin, function(req, res, next) {
+    //     next();
+    // });
+
     router.get('/api/music', async (request, response, next) => {
         try {
-            let result = await business.getMusicManager().query();
+            let result = await business.getMusicManager().query(request.body.userId);
             response.status(200).send(result);
         } catch (error) {
             console.log(error);
@@ -45,7 +59,6 @@ const musicEndpoint = (router) => {
             console.log(error);
         }
     });
-
 };
 
 export default musicEndpoint;

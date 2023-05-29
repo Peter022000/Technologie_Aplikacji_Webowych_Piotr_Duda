@@ -4,9 +4,11 @@ import mongoConverter from '../service/mongoConverter';
 import * as _ from "lodash";
 
 const musicSchema = new mongoose.Schema({
+    userId: {type: String},
     title: {type: String},
     image: {type: String},
     author: {type: String},
+    type: {type: String},
     year: {type: Number},
     length: {type: Number},
     album: {type: String},
@@ -18,13 +20,12 @@ musicSchema.plugin(uniqueValidator);
 
 const MusicModel = mongoose.model('music', musicSchema);
 
-async function query() {
-    const result = await MusicModel.find({});
-    {
+async function query(id) {
+    return MusicModel.find({userId: id}).then(function (result) {
         if (result) {
             return mongoConverter(result);
         }
-    }
+    });
 }
 
 async function get(id) {
@@ -53,7 +54,6 @@ async function remove(id) {
     return MusicModel.deleteOne({_id: id});
 }
 
-
 export default {
     query: query,
     get: get,
@@ -62,4 +62,3 @@ export default {
 
     model: MusicModel
 };
-
