@@ -1,5 +1,4 @@
-import {Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {Directive, ElementRef, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[formCheck]'

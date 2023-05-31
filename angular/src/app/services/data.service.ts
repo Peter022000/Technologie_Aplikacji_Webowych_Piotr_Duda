@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {Song} from "../models/song";
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +24,14 @@ export class DataService {
   addMusic(credentials: any) {
     return this.http.post(this.url + '/api/music', credentials);
   }
+
+  deleteMusic(id: string) {
+    const params = new HttpParams().set('id', id);
+    return this.http.delete(this.url + '/api/music/', {params});
+  }
+
+  updateMusic(song: Song) {
+    return this.http.put(this.url + '/api/music/', song);
+  }
+
 }

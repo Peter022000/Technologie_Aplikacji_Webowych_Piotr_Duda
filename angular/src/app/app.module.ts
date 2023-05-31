@@ -23,6 +23,8 @@ import { MusicOfOthersComponent } from './components/music-of-others/music-of-ot
 import { FormCheckDirective } from './directives/form-check.directive';
 import { SongItemComponent } from './components/song-item/song-item.component';
 import { SongDetailsComponent } from './components/song-details/song-details.component';
+import { UpdateSongComponent } from './components/update-song/update-song.component';
+import { UpdateAuthDirective } from './directives/update-auth.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { SongDetailsComponent } from './components/song-details/song-details.com
     FormCheckDirective,
     SongItemComponent,
     SongDetailsComponent,
+    UpdateSongComponent,
+    UpdateAuthDirective,
   ],
   imports: [
     BrowserModule,

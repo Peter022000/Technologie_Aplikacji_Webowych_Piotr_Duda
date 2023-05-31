@@ -56,7 +56,9 @@ const musicEndpoint = (router) => {
 
     router.delete('/api/music', async (request, response, next) => {
         try {
-            let result = await business.getMusicManager().remove(request.body.id);
+            const queryObject = url.parse(request.url, true).query;
+            const id = queryObject.id;
+            let result = await business.getMusicManager().remove(id);
             response.status(200).send(result);
         } catch (error) {
             console.log(error);

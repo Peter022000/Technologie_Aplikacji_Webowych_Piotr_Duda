@@ -8,6 +8,7 @@ import {AddSongComponent} from "./components/add-song/add-song.component";
 import {YourMusicComponent} from "./components/your-music/your-music.component";
 import {MusicOfOthersComponent} from "./components/music-of-others/music-of-others.component";
 import {SongDetailsComponent} from "./components/song-details/song-details.component";
+import {UpdateSongComponent} from "./components/update-song/update-song.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'songDetails',
     component: SongDetailsComponent
+  },
+  {
+    path: 'songUpdate',
+    component: UpdateSongComponent
   },
   {
     path: 'musicOfOther',
