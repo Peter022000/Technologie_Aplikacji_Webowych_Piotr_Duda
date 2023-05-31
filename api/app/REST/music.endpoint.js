@@ -26,7 +26,7 @@ const musicEndpoint = (router) => {
 
     router.get('/api/music/:id', async (request, response, next) => {
         try {
-            let result = await business.getMusicManager().query();
+            let result = await business.getMusicManager().queryAll();
             response.status(200).send(result.find(obj => obj.id === request.params.id));
         } catch (error) {
             console.log(error);

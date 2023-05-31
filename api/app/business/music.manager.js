@@ -8,6 +8,14 @@ function create(context) {
         }
     }
 
+    async function queryAll() {
+        let result = musicDAO.queryAll();
+        if (result) {
+            return result;
+        }
+    }
+
+
     async function get(id) {
         let result = await musicDAO.get(id);
         if (result) {
@@ -31,6 +39,7 @@ function create(context) {
 
     return {
         query: query,
+        queryAll: queryAll,
         get: get,
         createNewOrUpdate: createNewOrUpdate,
         remove: remove

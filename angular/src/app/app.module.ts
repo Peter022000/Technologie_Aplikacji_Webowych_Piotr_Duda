@@ -17,6 +17,7 @@ import {AuthInterceptor} from './services/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddSongComponent } from './components/add-song/add-song.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     NavbarComponent,
+    AddSongComponent,
   ],
   imports: [
     BrowserModule,

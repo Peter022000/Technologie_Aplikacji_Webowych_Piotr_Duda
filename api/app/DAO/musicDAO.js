@@ -28,6 +28,17 @@ async function query(id) {
     });
 }
 
+async function queryAll() {
+    const result = await MusicModel.find({});
+    {
+        if (result) {
+            return mongoConverter(result);
+        }
+    }
+
+}
+
+
 async function get(id) {
     return MusicModel.findOne({_id: id}).then(function (result) {
         if (result) {
@@ -56,6 +67,7 @@ async function remove(id) {
 
 export default {
     query: query,
+    queryAll: queryAll,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
     remove: remove,
