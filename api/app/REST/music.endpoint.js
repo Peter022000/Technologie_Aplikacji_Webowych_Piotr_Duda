@@ -1,5 +1,6 @@
 import business from '../business/business.container';
 import applicationException from "../service/applicationException";
+import * as url from "url";
 const musicEndpoint = (router) => {
 
     // function requireLogin(request, response, next) {
@@ -15,9 +16,11 @@ const musicEndpoint = (router) => {
     //     next();
     // });
 
-    router.get('/api/music', async (request, response, next) => {
+    router.get('/api/music/getByUser', async (request, response, next) => {
         try {
-            let result = await business.getMusicManager().query(request.body.userId);
+            const queryObject = url.parse(request.url, true).query;
+            const userId = queryObject.userId;
+            let result = await business.getMusicManager().query(userId);
             response.status(200).send(result);
         } catch (error) {
             console.log(error);

@@ -3,6 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import { NgForm } from '@angular/forms';
+import {Song} from "../../models/song";
 
 @Component({
   selector: 'add-song',
@@ -41,15 +42,15 @@ export class AddSongComponent {
     'Dubstep',
     'Trap'
   ];
-  public newSong = {
+  newSong : Song = {
     userId: this.authService.getUserId(),
     image: '',
     text: '',
     title: '',
     author: '',
     type: '',
-    year: Number,
-    length: Number,
+    year: NaN,
+    length: NaN,
     album: '',
   };
 

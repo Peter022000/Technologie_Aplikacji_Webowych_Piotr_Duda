@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,9 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(id: any) {
-    return this.http.get(this.url + '/api/music', id);
+  getAllByUser(userId: string) {
+    const params = new HttpParams().set('userId', userId);
+    return this.http.get(this.url + '/api/music/getByUser', {params});
   }
 
   getById(id: string) {

@@ -1,0 +1,14 @@
+.song-details {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+h2 {
+  margin-top: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}

@@ -7,6 +7,7 @@ import {SignupComponent} from "./components/signup/signup.component";
 import {AddSongComponent} from "./components/add-song/add-song.component";
 import {YourMusicComponent} from "./components/your-music/your-music.component";
 import {MusicOfOthersComponent} from "./components/music-of-others/music-of-others.component";
+import {SongDetailsComponent} from "./components/song-details/song-details.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
     path: 'yourMusic',
     component: YourMusicComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'songDetails',
+    component: SongDetailsComponent
   },
   {
     path: 'musicOfOther',

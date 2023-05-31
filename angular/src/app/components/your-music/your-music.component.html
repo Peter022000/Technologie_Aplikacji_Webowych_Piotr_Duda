@@ -1,1 +1,6 @@
-<p>your-music works!</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1rem;">
+  <div *ngFor="let item of items$">
+    <song-item [song]="item">
+    </song-item>
+  </div>
+</div>
