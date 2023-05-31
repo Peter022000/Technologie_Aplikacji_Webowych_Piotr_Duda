@@ -4,6 +4,7 @@ import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import { NgForm } from '@angular/forms';
 import {defaultSong, Song} from "../../models/song";
+import {musicGenre} from "../../models/musicGenre";
 
 @Component({
   selector: 'add-song',
@@ -12,36 +13,8 @@ import {defaultSong, Song} from "../../models/song";
 })
 export class AddSongComponent {
   @ViewChild('songForm') songForm!: NgForm;
-  musicTypes: string[] = [
-    'Rock',
-    'Pop',
-    'Hip Hop',
-    'Jazz',
-    'Blues',
-    'Country',
-    'Electronic',
-    'Reggae',
-    'R&B',
-    'Classical',
-    'Folk',
-    'Metal',
-    'Indie',
-    'Punk',
-    'Funk',
-    'Soul',
-    'Disco',
-    'Gospel',
-    'Latin',
-    'Alternative',
-    'World',
-    'Experimental',
-    'Ambient',
-    'Dance',
-    'Techno',
-    'House',
-    'Dubstep',
-    'Trap'
-  ];
+  musicGenres: string[] = Object.values(musicGenre);
+
   public newSong : Song = {...defaultSong};
 
   constructor(private authService: AuthService, private dataService: DataService, public router: Router) {

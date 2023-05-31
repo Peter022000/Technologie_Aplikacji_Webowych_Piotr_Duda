@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {defaultSong, Song} from "../../models/song";
+import {DataService} from "../../services/data.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-song-details',
@@ -10,12 +12,19 @@ import {defaultSong, Song} from "../../models/song";
 export class SongDetailsComponent {
   song : Song = { ...defaultSong };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private service: DataService, private authService: AuthService, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.getById();
+  }
+  getById()
+  {
     this.route.queryParams.subscribe(params => {
-      this.song = JSON.parse(params['song']);
-      console.log(this.song);
+      const id = params['songId'];
+      this.service.getById(id).subscribe(response => {
+        this.song = response as Song;
+      });
     });
+
   }
 }

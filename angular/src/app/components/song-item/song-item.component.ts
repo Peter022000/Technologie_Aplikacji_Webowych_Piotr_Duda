@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {defaultSong, Song} from "../../models/song";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'song-item',
@@ -6,12 +8,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./song-item.component.css']
 })
 export class SongItemComponent {
-  @Input() song?: any;
-
-  ngOnInit(): void {
-  }
-
-  navigateToSongDetails() {
-    return JSON.stringify(this.song);
-  }
+  @Input() song: Song = {...defaultSong};
 }

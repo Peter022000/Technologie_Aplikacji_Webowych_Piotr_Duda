@@ -1,10 +1,12 @@
+import {musicGenre} from "./musicGenre";
+
 export interface Song {
   id?: string,
   userId: string;
   title: string;
   image: string;
   author: string;
-  type: string;
+  genre?: musicGenre | '';
   year: number;
   length: number;
   album: string;
@@ -16,9 +18,9 @@ export const defaultSong: Song = {
   title: '',
   image: '',
   author: '',
-  type: '',
-  year: 0,
-  length: 0,
+  genre: '',
+  year: NaN,
+  length: NaN,
   album: '',
   text: '',
 };

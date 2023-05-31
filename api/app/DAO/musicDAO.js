@@ -8,7 +8,7 @@ const musicSchema = new mongoose.Schema({
     title: {type: String},
     image: {type: String},
     author: {type: String},
-    type: {type: String},
+    genre: {type: String},
     year: {type: Number},
     length: {type: Number},
     album: {type: String},

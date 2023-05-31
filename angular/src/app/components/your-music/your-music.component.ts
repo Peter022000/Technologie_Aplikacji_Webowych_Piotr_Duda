@@ -20,7 +20,6 @@ export class YourMusicComponent {
 
   getAll(){
     this.service.getAllByUser(this.authService.getUserId()).subscribe(response => {
-      console.log(response);
       this.items$ = response as Song[];
     });
   }
