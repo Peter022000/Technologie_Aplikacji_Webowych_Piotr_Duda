@@ -1,1 +1,64 @@
-<p>add-song works!</p>
+<div class="d-flex justify-content-center">
+  <form (ngSubmit)="addSong()" #songForm="ngForm" class="song-form" formCheck>
+    <div class="form-group">
+      <label>Tytuł:</label>
+      <input type="text" name="title" [(ngModel)]="newSong.title" required class="form-control">
+      <div class="invalid-feedback">
+        Wypełnij pole tytuł
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Obrazek:</label>
+      <input type="text" name="image" [(ngModel)]="newSong.image" required class="form-control">
+      <div  class="invalid-feedback">
+        Wypełnij pole obrazek
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Autor:</label>
+      <input type="text" name="author" [(ngModel)]="newSong.author" required class="form-control">
+      <div class="invalid-feedback">
+        Wypełnij pole autor
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Typ:</label>
+      <select name="type" [(ngModel)]="newSong.type" required class="form-control">
+        <option value="" disabled hidden>Wybierz typ</option>
+        <option *ngFor="let musicType of musicTypes" [value]="musicType">{{ musicType }}</option>
+      </select>
+      <div class="invalid-feedback">
+        Wybierz typ
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Rok:</label>
+      <input type="number" name="year" [(ngModel)]="newSong.year" required class="form-control">
+      <div class="invalid-feedback">
+        Wypełnij pole rok
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Długość:</label>
+      <input type="number" name="length" [(ngModel)]="newSong.length" required class="form-control">
+      <div class="invalid-feedback">
+        Wypełnij pole długość
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Album:</label>
+      <input type="text" name="album" [(ngModel)]="newSong.album" required class="form-control">
+      <div class="invalid-feedback">
+        Wypełnij pole album
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Tekst:</label>
+      <textarea name="text" [(ngModel)]="newSong.text" required class="form-control textarea-resize"></textarea>
+      <div class="invalid-feedback">
+        Wypełnij pole tekst
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary submit-button">Dodaj piosenkę</button>
+  </form>
+</div>

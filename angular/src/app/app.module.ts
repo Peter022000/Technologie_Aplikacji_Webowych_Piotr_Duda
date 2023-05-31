@@ -18,6 +18,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddSongComponent } from './components/add-song/add-song.component';
+import { YourMusicComponent } from './components/your-music/your-music.component';
+import { MusicOfOthersComponent } from './components/music-of-others/music-of-others.component';
+import { FormCheckDirective } from './directives/form-check.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { AddSongComponent } from './components/add-song/add-song.component';
     SignupComponent,
     NavbarComponent,
     AddSongComponent,
+    YourMusicComponent,
+    MusicOfOthersComponent,
+    FormCheckDirective,
   ],
   imports: [
     BrowserModule,

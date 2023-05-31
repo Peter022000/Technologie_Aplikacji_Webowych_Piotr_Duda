@@ -1,0 +1,21 @@
+.song-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin: 20px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.textarea-resize {
+  resize: vertical;
+  height: 150px;
+}
+
+.submit-button {
+  margin-top: 20px;
+}

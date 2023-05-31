@@ -4,7 +4,9 @@ import {HomeComponent} from "./components/home/home.component";
 import {AuthGuard} from "./services/auth.guard";
 import {LoginComponent} from "./components/login/login.component";
 import {SignupComponent} from "./components/signup/signup.component";
-import {AddPostComponent} from "./components/add-music/add-post.component";
+import {AddSongComponent} from "./components/add-song/add-song.component";
+import {YourMusicComponent} from "./components/your-music/your-music.component";
+import {MusicOfOthersComponent} from "./components/music-of-others/music-of-others.component";
 
 const routes: Routes = [
   {
@@ -20,9 +22,18 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'addPost',
-    component: AddPostComponent,
+    path: 'addSong',
+    component: AddSongComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'yourMusic',
+    component: YourMusicComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'musicOfOther',
+    component: MusicOfOthersComponent
   }
 ];
 

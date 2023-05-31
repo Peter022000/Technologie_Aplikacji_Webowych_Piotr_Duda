@@ -53,6 +53,10 @@ export class AuthService {
     return !(jwtHelper.isTokenExpired(token));
   }
 
+  getUserId() {
+    return this.currentUser.userId;
+  }
+
   get currentUser() {
     const token = this.getToken();
     if (!token) {
