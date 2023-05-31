@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Song} from "../../models/song";
+import {defaultSong, Song} from "../../models/song";
 
 @Component({
   selector: 'app-song-details',
@@ -8,18 +8,7 @@ import {Song} from "../../models/song";
   styleUrls: ['./song-details.component.css']
 })
 export class SongDetailsComponent {
-  song : Song = {
-    userId: '',
-    image: '',
-    text: '',
-    title: '',
-    author: '',
-    type: '',
-    year: NaN,
-    length: NaN,
-    album: '',
-  };
-
+  song : Song = { ...defaultSong };
 
   constructor(private route: ActivatedRoute) {}
 

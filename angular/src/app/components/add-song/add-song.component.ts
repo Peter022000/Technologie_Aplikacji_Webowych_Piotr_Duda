@@ -3,7 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import { NgForm } from '@angular/forms';
-import {Song} from "../../models/song";
+import {defaultSong, Song} from "../../models/song";
 
 @Component({
   selector: 'add-song',
@@ -42,19 +42,10 @@ export class AddSongComponent {
     'Dubstep',
     'Trap'
   ];
-  newSong : Song = {
-    userId: this.authService.getUserId(),
-    image: '',
-    text: '',
-    title: '',
-    author: '',
-    type: '',
-    year: NaN,
-    length: NaN,
-    album: '',
-  };
+  public newSong : Song = {...defaultSong};
 
   constructor(private authService: AuthService, private dataService: DataService, public router: Router) {
+    this.newSong.userId = this.authService.getUserId();
   }
 
   addSong() {

@@ -1,11 +1,24 @@
 export interface Song {
+  id?: '',
   userId: string;
-  image: string;
-  text: string;
   title: string;
+  image: string;
   author: string;
   type: string;
   year: number;
   length: number;
   album: string;
+  text: string;
 }
+
+export const defaultSong: Song = {
+  userId: '',
+  title: '',
+  image: '',
+  author: '',
+  type: '',
+  year: 0,
+  length: 0,
+  album: '',
+  text: '',
+};
