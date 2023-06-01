@@ -5,11 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
-import { SummaryPipe } from './pipes/summary.pipe';
-import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import {FormsModule} from "@angular/forms";
-import { FilterTextPipe } from './pipes/filter-text.pipe';
-import { TextFormatDirective } from './directives/text-format.directive';
 import { HomeComponent } from './components/home/home.component';
 import {AuthService} from "./services/auth.service";
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -25,14 +21,11 @@ import { SongItemComponent } from './components/song-item/song-item.component';
 import { SongDetailsComponent } from './components/song-details/song-details.component';
 import { UpdateSongComponent } from './components/update-song/update-song.component';
 import { UpdateAuthDirective } from './directives/update-auth.directive';
+import { ExpandTextPipe } from './pipes/expand-text.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SummaryPipe,
-    SearchBarComponent,
-    FilterTextPipe,
-    TextFormatDirective,
     HomeComponent,
     LoginComponent,
     SignupComponent,
@@ -45,6 +38,7 @@ import { UpdateAuthDirective } from './directives/update-auth.directive';
     SongDetailsComponent,
     UpdateSongComponent,
     UpdateAuthDirective,
+    ExpandTextPipe,
   ],
   imports: [
     BrowserModule,

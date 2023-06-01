@@ -11,6 +11,7 @@
   </div>
   <div class="info">
     <h2>Informacje</h2>
+    <p>{{ user }}</p>
     <p>Autor: {{ song.author }}</p>
     <p>Typ: {{ song.genre }}</p>
     <p>Rok: {{ song.year }}</p>
@@ -19,6 +20,9 @@
   </div>
   <div class="text">
     <h2>Tekst</h2>
-    <p style="text-align: left">{{ song.text }}</p>
+    <p style="text-align: left" [innerHTML]="showFullText ? song.text : (song.text | expandText: 100)"></p>
+    <a style="cursor: pointer" *ngIf="song.text.length > 100" (click)="toggleFullText()">
+      {{ showFullText ? 'Pokaż mniej' : 'Pokaż więcej' }}
+    </a>
   </div>
 </div>

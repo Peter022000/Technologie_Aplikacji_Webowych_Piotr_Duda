@@ -6,11 +6,12 @@ export interface Song {
   title: string;
   image: string;
   author: string;
-  genre?: musicGenre | '';
+  genre: musicGenre | '';
   year: number;
   length: number;
   album: string;
   text: string;
+  [key: string]: any; // Indeksowanie typu
 }
 
 export const defaultSong: Song = {

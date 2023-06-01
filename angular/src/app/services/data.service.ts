@@ -17,6 +17,15 @@ export class DataService {
     return this.http.get(this.url + '/api/music/getByUser', {params});
   }
 
+  getAll() {
+    return this.http.get(this.url + '/api/music');
+  }
+
+  getUserName(userId: string) {
+    const params = new HttpParams().set('userId', userId);
+    return this.http.get(this.url + '/api/user/getNameById', {params});
+  }
+
   getById(id: string) {
     return this.http.get(this.url + '/api/music/' + id);
   }

@@ -56,6 +56,14 @@ async function getByEmailOrName(name) {
   throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
 }
 
+async function getNameById(id) {
+  const result = await UserModel.findOne({ _id: id });
+  if (result) {
+    return mongoConverter(result);
+  }
+  throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
+}
+
 async function get(id) {
   const result = await UserModel.findOne({ _id: id });
   if (result) {
@@ -73,6 +81,7 @@ export default {
   getByEmailOrName: getByEmailOrName,
   get: get,
   removeById: removeById,
+  getNameById: getNameById,
 
   userRole: userRole,
   model: UserModel

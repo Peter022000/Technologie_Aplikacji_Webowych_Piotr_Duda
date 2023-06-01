@@ -1,1 +1,6 @@
-<p>music-of-others works!</p>
+<div class="container">
+  <div *ngFor="let item of items$">
+    <song-item [song]="item">
+    </song-item>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import { AuthService } from '../services/auth.service';
   selector: '[updateAuth]'
 })
 export class UpdateAuthDirective implements OnInit {
-  @Input('updateAuth') userId: any; // Przyjęcie danych wejściowych
+  @Input('updateAuth') userId: any;
 
   constructor(
     private templateRef: TemplateRef<any>,

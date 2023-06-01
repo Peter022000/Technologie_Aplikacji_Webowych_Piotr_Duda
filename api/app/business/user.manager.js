@@ -35,6 +35,11 @@ function create(context) {
     }
   }
 
+  async function getNameById(id) {
+    const user = await UserDAO.getNameById(id);
+    return user;
+  }
+
   async function removeHashSession(userId) {
     return await TokenDAO.remove(userId);
   }
@@ -42,7 +47,8 @@ function create(context) {
   return {
     authenticate: authenticate,
     createNewOrUpdate: createNewOrUpdate,
-    removeHashSession: removeHashSession
+    removeHashSession: removeHashSession,
+    getNameById:getNameById,
   };
 }
 

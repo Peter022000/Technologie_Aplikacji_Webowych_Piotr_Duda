@@ -27,6 +27,15 @@ const musicEndpoint = (router) => {
         }
     });
 
+    router.get('/api/music', async (request, response, next) => {
+        try {
+            let result = await business.getMusicManager().queryAll();
+            response.status(200).send(result);
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
     router.get('/api/music/:id', async (request, response, next) => {
         try {
             let result = await business.getMusicManager().queryAll();
