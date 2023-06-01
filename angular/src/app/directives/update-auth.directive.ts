@@ -1,5 +1,4 @@
 import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import {defaultSong, Song} from "../models/song";
 import { AuthService } from '../services/auth.service';
 
 @Directive({
