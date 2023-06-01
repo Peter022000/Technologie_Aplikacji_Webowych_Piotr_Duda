@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'login',
@@ -17,8 +18,10 @@ export class LoginComponent implements OnInit {
   public logged?: boolean;
   public logout?: boolean;
 
-  constructor(public authService: AuthService,
-              private router: Router) {
+  @ViewChild('loginForm') loginForm!: NgForm;
+
+
+  constructor(public authService: AuthService, private router: Router) {
   }
 
 
@@ -26,18 +29,19 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-    return this.authService.authenticate(this.credentials).subscribe((result) => {
-      if (!result) {
-        this.logged = false;
-      } else {
-        this.logout = false;
-        this.credentials = {
-          login: '',
-          password: ''
-        };
-        this.router.navigate(['/']);
-      }
-    });
+    if(this.loginForm.valid) {
+      this.authService.authenticate(this.credentials).subscribe((result) => {
+        if (!result) {
+          this.logged = false;
+        } else {
+          this.logout = false;
+          this.credentials = {
+            login: '',
+            password: ''
+          };
+          this.router.navigate(['/']);
+        }
+      });
+    }
   }
-
 }

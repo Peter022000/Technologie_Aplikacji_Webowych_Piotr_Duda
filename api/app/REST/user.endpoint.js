@@ -20,12 +20,11 @@ const userEndpoint = (router) => {
             const userId = queryObject.userId;
             const result = await business.getUserManager().getNameById(userId);
 
-            response.status(200).send((result.name));
+            response.status(200).send(JSON.stringify(result.name));
         } catch (error) {
             applicationException.errorHandler(error, response);
         }
     });
-
 
     router.post('/api/user/create', async (request, response, next) => {
         try {

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'signup',
@@ -15,6 +16,8 @@ export class SignupComponent implements OnInit {
     password: '',
   };
 
+  @ViewChild('singUpForm') singUpForm!: NgForm;
+
   constructor(private authService: AuthService, public router: Router) {
   }
 
@@ -22,10 +25,12 @@ export class SignupComponent implements OnInit {
   }
 
   create() {
-    this.authService.createOrUpdate(this.credentials).subscribe((result) => {
-      return result;
-    });
-    this.router.navigate(['/']);
+    if(this.singUpForm.valid) {
+      this.authService.createOrUpdate(this.credentials).subscribe((result) => {
+        return result;
+      });
+      this.router.navigate(['/']);
+    }
   }
 }
 
