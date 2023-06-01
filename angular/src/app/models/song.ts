@@ -11,7 +11,6 @@ export interface Song {
   length: number;
   album: string;
   text: string;
-  [key: string]: any; // Indeksowanie typu
 }
 
 export const defaultSong: Song = {
