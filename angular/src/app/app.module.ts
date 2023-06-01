@@ -22,6 +22,8 @@ import { SongDetailsComponent } from './components/song-details/song-details.com
 import { UpdateSongComponent } from './components/update-song/update-song.component';
 import { UpdateAuthDirective } from './directives/update-auth.directive';
 import { ExpandTextPipe } from './pipes/expand-text.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ExpandTextPipe } from './pipes/expand-text.pipe';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [
     DataService,

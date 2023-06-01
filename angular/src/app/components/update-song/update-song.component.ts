@@ -5,6 +5,7 @@ import {AuthService} from "../../services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {musicGenre} from "../../models/musicGenre";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-update-song',
@@ -16,7 +17,7 @@ export class UpdateSongComponent {
   musicGenres: string[] = Object.values(musicGenre);
   song : Song = { ...defaultSong };
 
-  constructor(private service: DataService, private authService: AuthService, private route: ActivatedRoute, public router: Router) {}
+  constructor(private service: DataService, private authService: AuthService, private route: ActivatedRoute, public router: Router, private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.getById();
@@ -38,7 +39,10 @@ export class UpdateSongComponent {
   updateSong() {
     if (this.authService.isLoggedIn() && this.songForm.valid) {
       this.service.updateMusic(this.song).subscribe((result) => {
-        return result;
+        this.snackBar.open('Zmodyfikowałeś utwór ', 'OK', {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
       });
       this.router.navigate(['/']);
     }

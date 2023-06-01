@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   @ViewChild('loginForm') loginForm!: NgForm;
 
 
-  constructor(public authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, private router: Router, private snackBar: MatSnackBar) {
   }
 
 
@@ -34,6 +35,10 @@ export class LoginComponent implements OnInit {
         if (!result) {
           this.logged = false;
         } else {
+          this.snackBar.open('Logowanie udane', 'OK', {
+            duration: 3000,
+            verticalPosition: 'top'
+          });
           this.logout = false;
           this.credentials = {
             login: '',
@@ -41,7 +46,14 @@ export class LoginComponent implements OnInit {
           };
           this.router.navigate(['/']);
         }
-      });
+      },
+      (error) => {
+        this.snackBar.open('Logowanie nieudane', 'OK', {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
+      }
+      );
     }
   }
 }
