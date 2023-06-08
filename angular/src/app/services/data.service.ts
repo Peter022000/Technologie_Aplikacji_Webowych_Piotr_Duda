@@ -18,7 +18,7 @@ export class DataService {
   }
 
   getAll() {
-    return this.http.get(this.url + '/api/music');
+    return this.http.get(this.url + '/api/music/getAll');
   }
 
   getUserName(userId: string) {
@@ -27,7 +27,8 @@ export class DataService {
   }
 
   getById(id: string) {
-    return this.http.get(this.url + '/api/music/' + id);
+    const params = new HttpParams().set('userId', id);
+    return this.http.get(this.url + '/api/music/getById', {params});
   }
 
   addMusic(credentials: any) {

@@ -27,7 +27,7 @@ const musicEndpoint = (router) => {
         }
     });
 
-    router.get('/api/music', async (request, response, next) => {
+    router.get('/api/music/getAll', async (request, response, next) => {
         try {
             let result = await business.getMusicManager().queryAll();
             response.status(200).send(result);
@@ -36,10 +36,12 @@ const musicEndpoint = (router) => {
         }
     });
 
-    router.get('/api/music/:id', async (request, response, next) => {
+    router.get('/api/music/getById', async (request, response, next) => {
         try {
+            const queryObject = url.parse(request.url, true).query;
+            const id = queryObject.userId;
             let result = await business.getMusicManager().queryAll();
-            response.status(200).send(result.find(obj => obj.id === request.params.id));
+            response.status(200).send(result.find(obj => obj.id === id));
         } catch (error) {
             console.log(error);
         }
