@@ -1,0 +1,5 @@
+/node-docker/node_modules
+/blog-client/node_modules
+/blog-server/node_modules
+/node-docker/npm-debug.log
+/.idea

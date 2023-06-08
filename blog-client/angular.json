@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "lab"
+  "defaultProject": "lab",
+  "cli": {
+    "analytics": false
+  }
 }

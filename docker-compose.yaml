@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  angular:
+    build: blog-client
+    ports:
+      - "4200:4200"
+
+  express:
+    build: blog-server
+    ports:
+      - "3000:3000"
+
+  database:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
