@@ -15,7 +15,7 @@
     <p>Autor: {{ song.author }}</p>
     <p>Typ: {{ song.genre }}</p>
     <p>Rok: {{ song.year }}</p>
-    <p>Długość: {{ song.length }} min.</p>
+    <p>Długość: {{ song.length | roundNumber }} min.</p>
     <p>Album: {{ song.album }}</p>
   </div>
   <div class="text">

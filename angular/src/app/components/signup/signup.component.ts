@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['/']);
         },
         (error) => {
-          this.snackBar.open('Logowanie nieudane', 'OK', {
+          this.snackBar.open('Rejestracja nie udana', 'OK', {
             duration: 3000,
             verticalPosition: 'top'
           });

@@ -24,6 +24,7 @@ import { UpdateAuthDirective } from './directives/update-auth.directive';
 import { ExpandTextPipe } from './pipes/expand-text.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { RoundNumberPipe } from './pipes/round-number.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     UpdateSongComponent,
     UpdateAuthDirective,
     ExpandTextPipe,
+    RoundNumberPipe,
   ],
   imports: [
     BrowserModule,
